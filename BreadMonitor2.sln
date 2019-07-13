@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BreadMonitor2", "BreadMonitor2.vcxproj", "{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Debug|ARM.Build.0 = Debug|ARM
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Debug|ARM.Deploy.0 = Debug|ARM
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Debug|ARM64.Build.0 = Debug|ARM64
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Release|ARM.ActiveCfg = Release|ARM
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Release|ARM.Build.0 = Release|ARM
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Release|ARM.Deploy.0 = Release|ARM
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Release|ARM64.ActiveCfg = Release|ARM64
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Release|ARM64.Build.0 = Release|ARM64
+		{3EE20954-6FDE-49D8-94D0-60677DDEE0DA}.Release|ARM64.Deploy.0 = Release|ARM64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11C1C664-FE16-4659-B851-897EFF363771}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+#misc
+*.o
+*.h.gch
+*.pyc
+
