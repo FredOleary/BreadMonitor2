@@ -15,7 +15,7 @@ Configuration::Configuration(){
 	// Read the recipe file
 #ifndef foo
 	try {
-		// Config file 'recipe.txt' should be in same directory as executable
+		// Config file 'recipe.txt' should be in same directory as executable.
 		std::ifstream recipe("recipe.txt", std::ifstream::in);
 		if (recipe.good()) {
 			JsonWrapper* recipePtr = JsonWrapper::Create(recipe);
