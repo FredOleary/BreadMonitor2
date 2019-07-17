@@ -1,6 +1,6 @@
 {
 "whiteFlourGms":500,
 "waterGms":360,
-"instantYeastGm": 2,
+"instantYeastGms": 2,
 "saltGms":12
 }
