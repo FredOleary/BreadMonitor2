@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 class JsonWrapper{
 	
@@ -12,7 +13,8 @@ class JsonWrapper{
 		
 		static JsonWrapper* Create();
 		static JsonWrapper* Create(std::string jsonString);
-		
+		static JsonWrapper* Create(std::ifstream& file);
+
 	protected:
 		JsonWrapper();
 };

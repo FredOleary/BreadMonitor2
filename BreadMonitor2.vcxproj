@@ -46,6 +46,9 @@
   <ImportGroup Label="Shared" />
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <AdditionalSourcesToCopyMapping>$(MSBuildProjectDirectory)\recipe.txt:=~/projects/BreadMonitor2/bin/ARM/Debug/recipe.txt;$(AdditionalSourcesToCopyMapping)</AdditionalSourcesToCopyMapping>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
       <LibraryDependencies>wiringPi; curl</LibraryDependencies>
@@ -72,7 +75,9 @@
     <ClCompile Include="console_logger.cxx" />
     <ClCompile Include="console_observer.cxx" />
     <ClCompile Include="http_observer.cxx" />
-    <ClCompile Include="json_wrapper.cxx" />
+    <ClCompile Include="json_wrapper.cxx">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">-Wno-psabi</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="utility.cxx" />
   </ItemGroup>
   <ItemGroup>

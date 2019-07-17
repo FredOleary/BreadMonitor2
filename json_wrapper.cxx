@@ -8,6 +8,10 @@ class JsonWrapperImpl : public JsonWrapper {
 		JsonWrapperImpl(){ }
 		~JsonWrapperImpl(){
 		}
+		JsonWrapperImpl(std::ifstream& file) {
+			jsonInst = nlohmann::json::parse(file);
+		}
+
 
 		JsonWrapperImpl( std::string jsonString ){
 			jsonInst = nlohmann::json::parse(jsonString.c_str());
@@ -50,3 +54,10 @@ JsonWrapper* JsonWrapper::Create(){
 JsonWrapper* JsonWrapper::Create(std::string jsonString){
 	return new JsonWrapperImpl(jsonString);
 }
+
+JsonWrapper* JsonWrapper::Create(std::ifstream& file)
+{
+	//return nullptr;
+	return new JsonWrapperImpl(file);
+}
+

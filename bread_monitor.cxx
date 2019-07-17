@@ -41,7 +41,7 @@
 void parseOptions( int argc, char **argv, Configuration& configuration );
 void run( Configuration& configuration, LED& readingLED, Logger& logger, std::vector<Observer*> observers, std::vector<Sensor*> sensors );
 
-int main(int argc, char **argv)
+int main(int argc, char **argv, char** env)
 {
 	ConsoleLogger logger;
 	
