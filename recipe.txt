@@ -2,5 +2,8 @@
 "whiteFlourGms":500,
 "waterGms":360,
 "instantYeastGms": 2,
-"saltGms":12
+"saltGms":12,
+"waterTempDegF":92,
+"fermentationTimeMins":300,
+"proofTimeMins":75
 }
