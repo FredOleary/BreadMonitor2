@@ -3,3 +3,8 @@
 *.h.gch
 *.pyc
 
+/.vs
+/bin/ARM/Debug
+/obj/ARM/Debug
+/readme
+/main.cpp
