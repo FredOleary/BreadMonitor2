@@ -78,20 +78,25 @@ int main(int argc, char **argv, char** env)
 void parseOptions( int argc, char **argv, Configuration& configuration ){
   char *nvalue = NULL;
   char *dvalue = NULL;
+  char* ivalue = NULL;
+
   int c;
 
   opterr = 0;
 
-	while ((c = getopt (argc, argv, "n:d:")) != -1){
+	while ((c = getopt (argc, argv, "n:d:i:")) != -1){
 		switch (c){
-		  case 'n':
-			nvalue = optarg;
-			break;
-		  case 'd':
-			dvalue = optarg;
-			break;
-		  default:
-			break;
+			case 'n':
+				nvalue = optarg;
+				break;
+			case 'd':
+				dvalue = optarg;
+				break;
+			case 'i':
+				ivalue = optarg;
+				break;
+			default:
+				break;
 		  }
 	}
 	if( nvalue != NULL ){
@@ -100,6 +105,10 @@ void parseOptions( int argc, char **argv, Configuration& configuration ){
 	if( dvalue != NULL){
 		configuration.setDuration( atoi(dvalue));
 	}
+	if (ivalue != NULL) {
+		configuration.setServerURL(ivalue);
+	}
+
 }
 
 void run( Configuration& configuration, LED& readingLED, Logger& logger, std::vector<Observer*> observers, std::vector<Sensor*> sensors ){

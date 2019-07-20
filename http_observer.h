@@ -13,9 +13,10 @@ class HttpObserver : public Observer{
 		std::string serverBaseURL;
 		std::time_t endDate;
 		int batchId;
+		Configuration& configuration;
 		
 	public:
-		HttpObserver( Logger& loggerIn, Configuration configuration );
+		HttpObserver( Logger& loggerIn, Configuration& configurationIn );
 		bool open( std::string name );
 		void close() const;
 		void update(std::vector<ReadingPtr>);

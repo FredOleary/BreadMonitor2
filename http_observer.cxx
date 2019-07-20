@@ -1,7 +1,6 @@
 #include <iostream>
 #include <memory>
 #include "http_observer.h"
-#include "json_wrapper.h"	
 
 size_t CurlWrite_CallbackFunc_StdString(void *contents, size_t size, size_t nmemb, std::string *s)
 {
@@ -18,7 +17,7 @@ size_t CurlWrite_CallbackFunc_StdString(void *contents, size_t size, size_t nmem
     return newLength;
 }
 	
-HttpObserver::HttpObserver( Logger& loggerIn, Configuration configuration ) : logger(loggerIn){
+HttpObserver::HttpObserver( Logger& loggerIn, Configuration& configurationIn ) : logger(loggerIn), configuration( configurationIn) {
 	curl = curl_easy_init();
 	batchId = -1;
 	if(curl != NULL) {
@@ -38,6 +37,10 @@ bool HttpObserver::open( std::string name ){
 			std::unique_ptr<JsonWrapper> wrapperRequest(JsonWrapper::Create());
 			wrapperRequest->addStringMember(std::string("name"), name);
 			wrapperRequest->addStringMember(std::string("endDate"), std::asctime( std::localtime(&endDate )));
+			if (configuration.getRecipe() != nullptr) {
+				wrapperRequest->addObjectMember(std::string("recipe"), configuration.getRecipe());
+
+			}
 			
 			std::string postData = wrapperRequest->getJsonString();
 			logger.info( std::string("HttpObserver::open - Batch: " + postData ) );
@@ -54,7 +57,7 @@ bool HttpObserver::open( std::string name ){
 			
 			res = curl_easy_perform(curl);
 			if(res != CURLE_OK){
-				logger.error( std::string("HttpObserver::update curl_easy_perform() failed") + std::string( curl_easy_strerror(res)) );
+				logger.error( std::string("HttpObserver::update curl_easy_perform() failed: ") + std::string( curl_easy_strerror(res)) );
 				return false;
 			}
 			std::unique_ptr<JsonWrapper> wrapperResponse(JsonWrapper::Create(postResponse));

@@ -2,7 +2,6 @@
 #include <iostream>
 #include <ctime>
 #include "configuration.h"
-#include "json_wrapper.h"
 	
 Configuration::Configuration(){
 	startTime = std::time(nullptr);
@@ -11,20 +10,20 @@ Configuration::Configuration(){
 	endTime += (durationInHours*60*60);	
 	name = "Batch";
 	serverURL = "http://192.168.50.5:3000/";
+	recipePtr = nullptr;
 
 	// Read the recipe file
-#ifndef foo
 	try {
 		// Config file 'recipe.txt' should be in same directory as executable.
 		std::ifstream recipe("recipe.txt", std::ifstream::in);
 		if (recipe.good()) {
-			JsonWrapper* recipePtr = JsonWrapper::Create(recipe);
+			recipePtr = JsonWrapper::Create(recipe);
 
 		}
 	}catch (std::exception& ex) {
 		std::cout << ex.what() << std::endl;
 	}
-#endif
+
 }
 
 std::time_t Configuration::getStartTime() const {
@@ -39,6 +38,9 @@ std::string Configuration::getName() const{
 std::string Configuration::getServerURL() const{
 	return serverURL;
 }
+JsonWrapper* Configuration::getRecipe() const {
+	return recipePtr;
+}
 void Configuration::setName( std::string newName ){
 	name = newName;
 }
@@ -47,3 +49,10 @@ void Configuration::setDuration( int durationInHoursIn ){
 	durationInHours = durationInHoursIn;
 	endTime = startTime + (durationInHours*60*60);
 }
+
+void Configuration::setServerURL(std::string serverURLIn)
+{
+	std::cout << serverURLIn << std::endl;
+	serverURL = serverURLIn;
+}
+

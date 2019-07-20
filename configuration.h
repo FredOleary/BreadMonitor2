@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <ctime>
+#include "json_wrapper.h"
+
 	
 class Configuration {
 	private:
@@ -9,6 +11,7 @@ class Configuration {
 		std::string name;
 		int durationInHours;
 		std::string serverURL;
+		JsonWrapper* recipePtr;
 	
 	public:
 		Configuration();
@@ -16,6 +19,7 @@ class Configuration {
 		std::time_t getEndTime() const;
 		std::string getName() const;
 		std::string getServerURL () const;
+		JsonWrapper* getRecipe() const;
 		
 		void setName( std::string name );
 		void setDuration( int hoursInDurationIn );

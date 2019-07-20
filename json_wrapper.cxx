@@ -26,6 +26,10 @@ class JsonWrapperImpl : public JsonWrapper {
 			jsonInst[key.c_str()] = value;
 		}
 
+		void addObjectMember(std::string key, JsonWrapper* jsonObjectPtr) {
+			jsonInst[key.c_str()] = (static_cast<JsonWrapperImpl*>(jsonObjectPtr))->jsonInst;
+		}
+
 		std::string getJsonString(){
 			return jsonInst.dump();
 		}
