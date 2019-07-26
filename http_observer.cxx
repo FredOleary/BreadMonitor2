@@ -67,6 +67,8 @@ bool HttpObserver::open( std::string name ){
 		}catch( std::exception& ex ){
 			logger.error(std::string( "HttpObserver::open - Open failed ") + ex.what() );
 			return false;
+		}catch (...) {
+			return false;
 		}
 	}else{
 		return false;
