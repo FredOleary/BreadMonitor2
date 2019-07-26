@@ -3,7 +3,7 @@
 #include "observer.h"
 #include <curl/curl.h>
 #include "configuration.h"
-#include "logger.h"
+#include "new_logger.h"
 	
 class HttpObserver : public Observer{
 	private:

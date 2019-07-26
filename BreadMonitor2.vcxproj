@@ -72,24 +72,27 @@
     <ClCompile Include="co2_reading.cxx" />
     <ClCompile Include="co2_sensor.cxx" />
     <ClCompile Include="configuration.cxx" />
-    <ClCompile Include="console_logger.cxx" />
+    <ClCompile Include="console_appendor.cxx" />
     <ClCompile Include="console_observer.cxx" />
     <ClCompile Include="http_observer.cxx" />
     <ClCompile Include="json_wrapper.cxx">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">-Wno-psabi</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="new_logger.cxx" />
     <ClCompile Include="utility.cxx" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Appendor.h" />
     <ClInclude Include="co2_reading.h" />
     <ClInclude Include="co2_sensor.h" />
     <ClInclude Include="configuration.h" />
-    <ClInclude Include="console_logger.h" />
+    <ClInclude Include="console_appendor.h" />
     <ClInclude Include="console_observer.h" />
     <ClInclude Include="http_observer.h" />
     <ClInclude Include="json_wrapper.h" />
     <ClInclude Include="LED.h" />
-    <ClInclude Include="logger.h" />
+    <ClInclude Include="Ilogger.h" />
+    <ClInclude Include="new_logger.h" />
     <ClInclude Include="observer.h" />
     <ClInclude Include="reading.h" />
     <ClInclude Include="sensor.h" />

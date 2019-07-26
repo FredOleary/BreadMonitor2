@@ -28,13 +28,14 @@
 #include <memory>
 #include <unistd.h>
 #include <wiringPi.h>
+#include "new_logger.h"
 #include "observer.h"
 #include "http_observer.h"
 #include "console_observer.h"
 #include "co2_sensor.h"
 #include "reading.h"
 #include "configuration.h"
-#include "console_logger.h"
+#include "console_appendor.h"
 #include "utility.h"
 #include "LED.h"
 
@@ -43,7 +44,10 @@ void run( Configuration& configuration, LED& readingLED, Logger& logger, std::ve
 
 int main(int argc, char **argv, char** env)
 {
-	ConsoleLogger logger;
+	Logger logger;
+	ConsoleAppendor* consoleAppendor = new ConsoleAppendor();
+	logger.addAppendor(consoleAppendor);
+
 	
 	wiringPiSetup() ;
 	

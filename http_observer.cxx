@@ -43,7 +43,7 @@ bool HttpObserver::open( std::string name ){
 			}
 			
 			std::string postData = wrapperRequest->getJsonString();
-			logger.info( std::string("HttpObserver::open - Batch: " + postData ) );
+			logger.info( std::string("HttpObserver::open - URL: " + serverBaseURL + " Batch: " + postData ) );
 			
 			std::string postResponse;		
 			std::string url = serverBaseURL + "batches";

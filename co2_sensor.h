@@ -1,6 +1,6 @@
 #include <iostream>
 #include "sensor.h"
-#include "logger.h"
+#include "new_logger.h"
 	
 class CO2Sensor : public Sensor{
 	private:

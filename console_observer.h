@@ -1,7 +1,7 @@
 #include <iostream>
 #include <memory>
 #include "observer.h"
-#include "logger.h"
+#include "new_logger.h"
 	
 class ConsoleObserver : public Observer{
 	private:
