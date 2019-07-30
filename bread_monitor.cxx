@@ -38,6 +38,8 @@
 #include "console_appendor.h"
 #include "utility.h"
 #include "LED.h"
+#include "file_appendor.h"
+
 
 void parseOptions( int argc, char **argv, Configuration& configuration );
 void run( Configuration& configuration, LED& readingLED, Logger& logger, std::vector<Observer*> observers, std::vector<Sensor*> sensors );
@@ -48,7 +50,10 @@ int main(int argc, char **argv, char** env)
 	ConsoleAppendor* consoleAppendor = new ConsoleAppendor();
 	logger.addAppendor(consoleAppendor);
 
-	
+	FileAppendor* fileAppendor = new FileAppendor();
+	fileAppendor->open("logfile.txt");
+	logger.addAppendor(fileAppendor);
+
 	wiringPiSetup() ;
 	
 	LED readingLED;
@@ -75,6 +80,11 @@ int main(int argc, char **argv, char** env)
   	std::unique_ptr<CO2Sensor> co2SensorPtr(new CO2Sensor(logger));
  	sensors.push_back(co2SensorPtr.get());
  	run( configuration, readingLED, logger, observers, sensors );
+	
+	fileAppendor->close();
+	consoleAppendor->close();
+	delete consoleAppendor;
+	delete fileAppendor;
 	
 	return 0;
 }
