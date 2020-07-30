@@ -1,7 +1,7 @@
 # BreadMonitor2
 ## BreadMonitor2 is a "Hello world" C++ RaspberryPI applictaion for monitoring CO2 production in bread making.
 ## Usage
-The CO2 sensor attached to the Raspberry PI is placed in the covered bread containg and the application started. Periodically the application will sample CO2 and HTTP the results to the monitoring server
+The CO2 sensor attached to the Raspberry PI is placed in the covered bread container and the application started. The applicaion is started by remotely sshing into the Raspberry PI and running the application *BreadMonitor2.out*. Periodically the application will sample CO2 and HTTP the results to the monitoring server
 
 ## Options
 -nBatchName - Name of the bread batch. Default is "Batch"
