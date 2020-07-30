@@ -13,3 +13,5 @@ The CO2 sensor attached to the Raspberry PI is placed in the covered bread conta
 
 Example: `./BreadMonitor2.out -nWhiskey`
 
+## Notes
+See repositary BreadMonitor for the Web server/client applications use to collect and display the results of the Raspberry PI CO2 application.
