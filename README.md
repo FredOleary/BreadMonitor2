@@ -5,15 +5,11 @@ The CO2 sensor attached to the Raspberry PI is placed in the covered bread conta
 
 ## Options
 -nBatchName - Name of the bread batch. Default is "Batch"
--iURL - URL of the monitoring web application default is "http://192.168.50.5:3000/"
+
+-iURL - URL of the monitoring web application. Default is "http://192.168.50.5:3000/"
+
+-dDuration - Length of time to monitor in hours. Default is 12 hours
 
 
-
-	startTime = std::time(nullptr);
-	endTime = std::time(nullptr);
-	durationInHours = 12; // 12 hour duration
-	endTime += (durationInHours*60*60);	
-	name = "Batch";
-	serverURL = "http://192.168.50.5:3000/";
-	recipePtr = nullptr;
+Example: `./BreadMonitor2.out -nWhiskey`
 
